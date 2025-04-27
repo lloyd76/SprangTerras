@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprang Terras Solicitors | Ayrshire Law Firm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1A3D8F;
+            --secondary: #E03C31;
+            --accent: #FFD700;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            color: #333;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .bg-primary {
+            background-color: var(--primary);
+        }
+        
+        .text-primary {
+            color: var(--primary);
+        }
+        
+        .bg-secondary {
+            background-color: var(--secondary);
+        }
+        
+        .text-secondary {
+            color: var(--secondary);
+        }
+        
+        .bg-accent {
+            background-color: var(--accent);
+        }
+        
+        .text-accent {
+            color: var(--accent);
+        }
+        
+        .border-primary {
+            border-color: var(--primary);
+        }
+        
+        .border-secondary {
+            border-color: var(--secondary);
+        }
+        
+        .navbar {
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar.scrolled {
+            background-color: rgba(26, 61, 143, 0.95);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            z-index: 100;
+        }
+        
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            transition: all 0.3s ease-in-out;
+            background-color: white;
+        }
+        
+        .hamburger.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+        }
+        
+        .card {
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .director-card {
+            transition: all 0.3s ease;
+        }
+        
+        .director-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .practice-area-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .practice-area-card:hover {
+            transform: translateY(-5px);
+            border-left: 4px solid var(--secondary);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .news-card {
+            transition: all 0.3s ease;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 61, 143, 0.1);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+        
+        .btn-primary:hover {
+            background-color: #14307a;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: white;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #c53228;
+            transform: translateY(-2px);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        .animate-slide-up {
+            animation: slideUp 0.8s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 0;
+                flex-direction: column;
+                background-color: var(--primary);
+                width: 100%;
+                height: 100vh;
+                text-align: center;
+                transition: 0.3s;
+                padding-top: 100px;
+                z-index: 99;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .hero {
+                background-attachment: scroll;
+                min-height: 90vh;
+            }
+            
+            .section-title:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="navbar fixed w-full z-50 bg-primary/90 text-white py-4">
+        <div class="container mx-auto px-4 xl:px-0 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="#home" class="text-2xl font-bold flex items-center">
+                    <span class="bg-white text-primary px-3 py-1 rounded mr-2">ST</span>
+                    <span>Sprang Terras</span>
+                </a>
+            </div>
+            
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            
+            <ul class="nav-menu flex space-x-8" id="nav-menu">
+                <li><a href="#home" class="nav-link hover:text-accent transition duration-300">Home</a></li>
+                <li><a href="#about" class="nav-link hover:text-accent transition duration-300">About Us</a></li>
+                <li><a href="#directors" class="nav-link hover:text-accent transition duration-300">Directors</a></li>
+                <li><a href="#practice" class="nav-link hover:text-accent transition duration-300">Services</a></li>
+                <li><a href="#contact" class="nav-link hover:text-accent transition duration-300">Contact</a></li>
+                <li><a href="#" class="btn-secondary px-4 py-2"><i class="fas fa-phone mr-2"></i>01292 288300</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero flex items-center justify-center text-white">
+        <div class="container mx-auto px-4 text-center animate-fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Expert Legal Services in<br>Ayrshire for Over 30 Years</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Sprang Terras Solicitors delivers professional legal services with a personal touch across Ayrshire and the West of Scotland.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="btn-secondary px-8 py-4 font-medium">Book a Consultation</a>
+                <a href="#practice" class="bg-white text-primary px-8 py-4 font-medium rounded-lg hover:bg-gray-100 transition duration-300">Our Services</a>
+            </div>
+            <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-3">
+                        <i class="fas fa-award text-accent"></i>
+                    </div>
+                    <span>Regulated by the Law Society of Scotland</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-3">
+                        <i class="fas fa-user-tie text-accent"></i>
+                    </div>
+                    <span>20+ Years Combined Experience</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-slide-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 section-title">About Our Firm</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Why we're one of Ayrshire's most trusted law firms</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 animate-slide-up">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80" alt="Law firm office" class="rounded-xl shadow-xl w-full">
+                        <div class="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-xl shadow-lg hidden lg:block">
+                            <p class="text-2xl font-bold">30+</p>
+                            <p class="text-sm">Years in Business</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="bg-gray-50 p-8 rounded-xl">
+                        <p class="text-gray-700 mb-6">Established in 1992 by Alan Sprang, our firm quickly earned a reputation for excellence in conveyancing, property law, wills, and executries. Today, we continue to build on those foundations of expertise, integrity, and discretion.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 text-primary p-2 rounded-full mr-4">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-primary mb-1">Client-Centered Approach</h4>
+                                    <p class="text-gray-700">We maintain close director-client relationships that are second to none in the region.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 text-primary p-2 rounded-full mr-4">
+                                    <i class="fas fa-network-wired"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-primary mb-1">Comprehensive Network</h4>
+                                    <p class="text-gray-700">For services we don't provide, we offer trusted referrals to specialist solicitors or advocates.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 text-primary p-2 rounded-full mr-4">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-primary mb-1">Modern Technology</h4>
+                                    <p class="text-gray-700">We've invested in cutting-edge legal technology to deliver efficient, flexible services.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                            <a href="#directors" class="btn-primary px-6 py-3 text-center">Meet Our Team</a>
+                            <a href="#practice" class="border border-primary text-primary px-6 py-3 rounded-lg hover:bg-primary/10 transition duration-300 text-center">Our Services</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Directors Section -->
+    <section id="directors" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-slide-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 section-title">Our Directors</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Leading solicitors with decades of combined experience</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row justify-center gap-8 max-w-6xl mx-auto">
+                <!-- Alan Sprang -->
+                <div class="director-card bg-white rounded-xl shadow-lg overflow-hidden flex-1 animate-slide-up">
+                    <div class="p-8">
+                        <div class="text-center mb-6">
+                            <div class="relative mx-auto w-32 h-32 mb-4">
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Alan Sprang" class="w-full h-full rounded-full object-cover border-4 border-primary">
+                                <div class="absolute -bottom-2 -right-2 bg-secondary text-white p-2 rounded-full">
+                                    <i class="fas fa-crown"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold text-primary">Alan K Sprang</h3>
+                            <p class="text-secondary font-medium">Senior Director</p>
+                            <div class="flex justify-center mt-2 space-x-2">
+                                <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-primary"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="text-lg font-semibold text-primary mb-3 border-b pb-2">Expertise</h4>
+                            <p class="text-gray-700 mb-4">With over 30 years of experience, Alan specializes in private client work, commercial and business law, including residential and commercial property transactions, wills, estates, and powers of attorney.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full">Property Law</span>
+                                <span class="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full">Wills & Estates</span>
+                                <span class="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full">Commercial Law</span>
+                                <span class="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full">Housing Development</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="text-lg font-semibold text-primary mb-3 border-b pb-2">Contact</h4>
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-3">
+                                        <i class="fas fa-phone text-sm"></i>
+                                    </div>
+                                    <span>01292 288300</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-3">
+                                        <i class="fas fa-envelope text-sm"></i>
+                                    </div>
+                                    <span>aks@sprangterras.co.uk</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Euan Terras -->
+                <div class="director-card bg-white rounded-xl shadow-lg overflow-hidden flex-1 animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="p-8">
+                        <div class="text-center mb-6">
+                            <div class="relative mx-auto w-32 h-32 mb-4">
+                                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Euan Terras" class="w-full h-full rounded-full object-cover border-4 border-primary">
+                                <div class="absolute -bottom-2 -right-2 bg-secondary text-white p-2 rounded-full">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold text-primary">Euan M Terras</h3>
+                            <p class="text-secondary font-medium">Director</p>
+                            <div class="flex justify-center mt-2 space-x-2">
+                                <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-primary"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="text-lg font-semibold text-primary mb-3 border-b pb-2">Expertise</h4>
+                            <p class="text-gray-700 mb-4">Euan handles a diverse caseload including property law, private client work, family law, personal injury claims, and commercial matters. He's a recognized expert on land access issues and serves on several legal committees.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full">Property Law</span>
+                                <span class="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full">Family Law</span>
+                                <span class="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full">Personal Injury</span>
+                                <span class="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full">Charity Law</span>
+                                <span class="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full">Rights of Way</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="text-lg font-semibold text-primary mb-3 border-b pb-2">Contact</h4>
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-3">
+                                        <i class="fas fa-phone text-sm"></i>
+                                    </div>
+                                    <span>01292 288300</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-3">
+                                        <i class="fas fa-envelope text-sm"></i>
+                                    </div>
+                                    <span>emt@sprangterras.co.uk</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Areas Section -->
+    <section id="practice" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-slide-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 section-title">Our Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive legal solutions tailored to your needs</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Property Services -->
+                <div class="practice-area-card bg-white rounded-xl p-8 animate-slide-up">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary text-white p-3 rounded-xl mr-4">
+                            <i class="fas fa-home text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary">Property Services</h3>
+                    </div>
+                    <ul class="text-gray-700 space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>House Purchase and Sale</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Commercial Property Transactions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Remortgaging & Title Transfers</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Leasing & Tenancy Agreements</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Rights of Way Disputes</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <a href="#contact" class="text-secondary font-medium hover:underline">Get a Quote →</a>
+                    </div>
+                </div>
+                
+                <!-- Private Client Services -->
+                <div class="practice-area-card bg-white rounded-xl p-8 animate-slide-up" style="animation-delay: 0.1s;">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary text-white p-3 rounded-xl mr-4">
+                            <i class="fas fa-user-tie text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary">Private Client Services</h3>
+                    </div>
+                    <ul class="text-gray-700 space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Wills & Estate Planning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Powers of Attorney</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Guardianships</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Estate Administration</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Inheritance Tax Planning</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <a href="#contact" class="text-secondary font-medium hover:underline">Get a Quote →</a>
+                    </div>
+                </div>
+                
+                <!-- Commercial Services -->
+                <div class="practice-area-card bg-white rounded-xl p-8 animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary text-white p-3 rounded-xl mr-4">
+                            <i class="fas fa-briefcase text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary">Commercial Services</h3>
+                    </div>
+                    <ul class="text-gray-700 space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Company Formation & Sales</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Commercial Leasing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Franchising Agreements</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Shareholder Agreements</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Charity & Community Law</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <a href="#contact" class="text-secondary font-medium hover:underline">Get a Quote →</a>
+                    </div>
+                </div>
+                
+                <!-- Family Law -->
+                <div class="practice-area-card bg-white rounded-xl p-8 animate-slide-up" style="animation-delay: 0.3s;">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary text-white p-3 rounded-xl mr-4">
+                            <i class="fas fa-heart text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary">Family Law</h3>
+                    </div>
+                    <ul class="text-gray-700 space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Separation & Divorce</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Child Custody Arrangements</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Pre-Nuptial Agreements</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Financial Settlements</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <a href="#contact" class="text-secondary font-medium hover:underline">Get a Quote →</a>
+                    </div>
+                </div>
+                
+                <!-- Personal Injury -->
+                <div class="practice-area-card bg-white rounded-xl p-8 animate-slide-up" style="animation-delay: 0.4s;">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary text-white p-3 rounded-xl mr-4">
+                            <i class="fas fa-user-injured text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary">Personal Injury</h3>
+                    </div>
+                    <ul class="text-gray-700 space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Accident Claims</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Workplace Injuries</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Medical Negligence</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Criminal Injuries Compensation</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <a href="#contact" class="text-secondary font-medium hover:underline">Get a Quote →</a>
+                    </div>
+                </div>
+                
+                <!-- Other Services -->
+                <div class="practice-area-card bg-white rounded-xl p-8 animate-slide-up" style="animation-delay: 0.5s;">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary text-white p-3 rounded-xl mr-4">
+                            <i class="fas fa-gavel text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary">Other Legal Services</h3>
+                    </div>
+                    <ul class="text-gray-700 space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Debt Recovery</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Contract Disputes</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Employment Law</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-3 mt-1"></i>
+                            <span>Planning Law</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <a href="#contact" class="text-secondary font-medium hover:underline">Get a Quote →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-slide-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 section-title">Client Testimonials</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">What our clients say about our services</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 animate-slide-up">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6">"Alan Sprang handled our property purchase with exceptional professionalism. He was always available to answer questions and made the process stress-free. Highly recommended!"</p>
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Sarah Johnson" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-primary">Sarah Johnson</h4>
+                            <p class="text-gray-600 text-sm">Property Client</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6">"Euan Terras provided outstanding advice during our difficult divorce. His expertise and compassionate approach made a challenging time much more manageable. Thank you!"</p>
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Michael Brown" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-primary">Michael Brown</h4>
+                            <p class="text-gray-600 text-sm">Family Law Client</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 animate-slide-up" style="animation-delay: 0.4s;">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6">"The team at Sprang Terras handled my mother's estate with sensitivity and efficiency. Their attention to detail and clear communication was exceptional throughout."</p>
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80" alt="Emma Wilson" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-primary">Emma Wilson</h4>
+                            <p class="text-gray-600 text-sm">Estate Planning Client</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-slide-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 section-title">Latest News</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Legal updates and important information</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- News Item 1 -->
+                <div class="news-card bg-gray-50 rounded-xl overflow-hidden animate-slide-up">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/3">
+                            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Will writing" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 md:w-2/3">
+                            <div class="flex items-center text-sm text-gray-500 mb-2">
+                                <span>June 15, 2023</span>
+                                <span class="mx-2">•</span>
+                                <span class="text-primary">Wills & Estates</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-primary mb-3">Make or Review Your Will Now</h3>
+                            <p class="text-gray-700 mb-4">Everyone should have a Will but it's easy to put off making one. If you die without one, your assets may be distributed according to the law rather than your wishes...</p>
+                            <a href="#" class="text-secondary font-medium hover:underline">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- News Item 2 -->
+                <div class="news-card bg-gray-50 rounded-xl overflow-hidden animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/3">
+                            <img src="https://images.unsplash.com/photo-1575505586569-646b2ca898fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Power of Attorney" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 md:w-2/3">
+                            <div class="flex items-center text-sm text-gray-500 mb-2">
+                                <span>May 28, 2023</span>
+                                <span class="mx-2">•</span>
+                                <span class="text-primary">Power of Attorney</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-primary mb-3">The Importance of Powers of Attorney</h3>
+                            <p class="text-gray-700 mb-4">Powers of Attorney are becoming as important as making a Will. What if you become unable to look after your own affairs due to illness or accident?...</p>
+                            <a href="#" class="text-secondary font-medium hover:underline">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional News -->
+            <div class="mt-8 bg-primary text-white rounded-xl p-6 animate-slide-up" style="animation-delay: 0.4s;">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-3/4 mb-4 md:mb-0">
+                        <h3 class="text-xl font-bold mb-2">Visiting Clients on the Island of Arran</h3>
+                        <p>Our solicitors visit the island regularly to meet with clients at their homes or businesses. Contact us for details of our next visit.</p>
+                    </div>
+                    <div class="md:w-1/4 text-center md:text-right">
+                        <a href="#contact" class="btn-secondary px-6 py-3 inline-block">Schedule a Visit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-slide-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 section-title">Contact Us</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Get in touch with our legal experts</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Contact Info -->
+                <div class="lg:w-1/3 bg-white p-8 rounded-xl shadow-lg animate-slide-up">
+                    <h3 class="text-2xl font-bold text-primary mb-6">Our Office</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-lg font-semibold text-primary mb-3 flex items-center">
+                                <i class="fas fa-map-marker-alt mr-2 text-secondary"></i>
+                                Address
+                            </h4>
+                            <p class="text-gray-700">64 Kyle Street<br>Ayr<br>KA7 1RZ<br>Scotland<br>United Kingdom</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-lg font-semibold text-primary mb-3 flex items-center">
+                                <i class="fas fa-phone-alt mr-2 text-secondary"></i>
+                                Contact Details
+                            </h4>
+                            <p class="text-gray-700 mb-2"><strong>Tel:</strong> 01292 288300</p>
+                            <p class="text-gray-700 mb-2"><strong>Fax:</strong> 01292 288400</p>
+                            <p class="text-gray-700"><strong>Email:</strong> enquiries@sprangterras.co.uk</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-lg font-semibold text-primary mb-3 flex items-center">
+                                <i class="fas fa-clock mr-2 text-secondary"></i>
+                                Opening Hours
+                            </h4>
+                            <p class="text-gray-700">Monday to Friday 9am - 5pm</p>
+                            <p class="text-gray-600 text-sm mt-2">Appointments outside these hours can be arranged in certain circumstances</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-lg font-semibold text-primary mb-3 flex items-center">
+                                <i class="fas fa-universal-access mr-2 text-secondary"></i>
+                                Accessibility
+                            </h4>
+                            <p class="text-gray-700">Our offices are on the first floor with no lift access. We offer home visits for clients unable to visit our offices.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 pt-6 border-t border-gray-200">
+                        <h4 class="text-lg font-semibold text-primary mb-3">Connect With Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Map -->
+                <div class="lg:w-1/3 animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="h-full rounded-xl overflow-hidden shadow-lg">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.124365071163!2d-4.630711923471195!3d55.46278767307022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x488f6f5d1c1f8a9f%3A0x3a1c2d0a5a5a5a5a!2s64%20Kyle%20St%2C%20Ayr%20KA7%201RZ%2C%20UK!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="lg:w-1/3 bg-white p-8 rounded-xl shadow-lg animate-slide-up" style="animation-delay: 0.4s;">
+                    <h3 class="text-2xl font-bold text-primary mb-6">Send Us a Message</h3>
+                    
+                    <form id="contactForm" class="space-y-4 contact-form">
+                        <div>
+                            <label for="name" class="block text-gray-700 font-medium mb-1">Full Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3" required>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-1">Email Address</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3" required>
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-gray-700 font-medium mb-1">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-gray-700 font-medium mb-1">Service Required</label>
+                            <select id="subject" name="subject" class="w-full px-4 py-3" required>
+                                <option value="">Select a service</option>
+                                <option value="Property Services">Property Services</option>
+                                <option value="Private Client">Private Client Services</option>
+                                <option value="Commercial Services">Commercial Services</option>
+                                <option value="Family Law">Family Law</option>
+                                <option value="Personal Injury">Personal Injury</option>
+                                <option value="Other">Other Legal Matter</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-1">Your Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3" required></textarea>
+                        </div>
+                        
+                        <div class="pt-2">
+                            <button type="submit" class="btn-primary w-full py-4 font-medium">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between gap-8 mb-8">
+                <div class="md:w-1/4">
+                    <a href="#" class="text-2xl font-bold flex items-center mb-4">
+                        <span class="bg-white text-primary px-3 py-1 rounded mr-2">ST</span>
+                        <span>Sprang Terras</span>
+                    </a>
+                    <p class="mb-4">Ayrshire's trusted legal professionals for over 30 years.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-accent"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-accent"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-accent"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/4">
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-accent transition duration-300">Home</a></li>
+                        <li><a href="#about" class="hover:text-accent transition duration-300">About Us</a></li>
+                        <li><a href="#directors" class="hover:text-accent transition duration-300">Our Directors</a></li>
+                        <li><a href="#practice" class="hover:text-accent transition duration-300">Services</a></li>
+                        <li><a href="#contact" class="hover:text-accent transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="md:w-1/4">
+                    <h3 class="text-lg font-bold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-accent transition duration-300">Property Law</a></li>
+                        <li><a href="#" class="hover:text-accent transition duration-300">Wills & Estates</a></li>
+                        <li><a href="#" class="hover:text-accent transition duration-300">Family Law</a></li>
+                        <li><a href="#" class="hover:text-accent transition duration-300">Commercial Law</a></li>
+                        <li><a href="#" class="hover:text-accent transition duration-300">Personal Injury</a></li>
+                    </ul>
+                </div>
+                
+                <div class="md:w-1/4">
+                    <h3 class="text-lg font-bold mb-4">Contact Info</h3>
+                    <address class="not-italic">
+                        <p class="mb-2">64 Kyle Street, Ayr</p>
+                        <p class="mb-2">KA7 1RZ, Scotland</p>
+                        <p class="mb-2">Tel: 01292 288300</p>
+                        <p class="mb-2">Fax: 01292 288400</p>
+                        <p>Email: enquiries@sprangterras.co.uk</p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-white/20">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-sm mb-4 md:mb-0">&copy; 2023 Sprang Terras Solicitors. All rights reserved.</p>
+                    <p class="text-sm">Regulated by the Law Society of Scotland</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the form data to a server
+            // For this example, we'll just show an alert
+            alert(`Thank you, ${name}! Your message regarding ${subject} has been received. We will contact you at ${email} soon.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animation on scroll
+        const animateElements = document.querySelectorAll('.animate-slide-up, .animate-fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        animateElements.forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
